@@ -13,6 +13,7 @@ const caixaResultado = document.createElement('div'); // Cria a caixa de resulta
 const textoResultado = document.createElement('p'); // Cria o parágrafo para o resultado
 const botaoJogarNovamente = document.createElement('button'); // Cria o botão "Jogar Novamente"
 const botaoComecar = document.getElementById('comecarBtn'); // Seleciona o botão "Começar Jogo"
+const mensagemInical = document.querySelector('.mensagem-inicial');
 
 // Adiciona as classes para as novas caixas
 caixaPerguntas.classList.add('caixa-perguntas');
@@ -88,9 +89,12 @@ function iniciarJogo() {
     atual = 0; 
     acertos = 0; 
     historiaFinal = ""; 
+    caixaPerguntas.classList.remove("mostrar");
+    caixaAlternativas.classList.remove("mostrar");
     caixaResultado.classList.remove("mostrar"); 
     mostraPergunta(); 
-    botaoComecar.style.display = 'none'; // Esconde o botão "Começar Jogo"
+    botaoComecar.style.display = 'none'; 
+    mensagemInical.style.display = 'none';
 }
 
 substituiNome();
